@@ -22,8 +22,18 @@ const agregarTarea = (tarea) =>{
             titulo:tarea.titulo,
             descripcion: tarea.descripcion,
             autor: tarea.autor,
-            //fechaEntrega: tarea.fechaEntrega
+            fechaEntrega: tarea.fechaEntrega
         }).then(
+            response =>{
+                dispatch(cargarTareas())
+            }
+        )
+    }
+}
+
+const borrarTarea = (id) =>{
+    return dispatch => {
+        return axios.delete("http://api-rest-padawan.herokuapp.com/tareas/"+id).then(
             response =>{
                 dispatch(cargarTareas())
             }
@@ -33,4 +43,4 @@ const agregarTarea = (tarea) =>{
 
 
 
-export {cargarTareas,agregarTarea}
+export {cargarTareas,agregarTarea,borrarTarea}

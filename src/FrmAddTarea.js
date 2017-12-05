@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Button,Grid,Col,Row,Form,FormGroup,FormControl,ControlLabel} from 'react-bootstrap';
+import {Button,Form,FormGroup,FormControl,ControlLabel} from 'react-bootstrap';
 import {agregarTarea} from './actionCreators';
 import {connect} from 'react-redux';
 import '../node_modules/react-notifications/dist/react-notifications.css';
@@ -39,8 +39,11 @@ class FrmAddTarea extends Component{
                 <Button type="button" bsStyle="success" onClick={()=> this.props.agregarTarea({
                     titulo:this.titulo.value,
                     descripcion:this.descripcion.value,
-                    autor:this.autor.value
-                })}>
+                    autor:this.autor.value,
+                    fechaEntrega:this.fechaEntrega.value
+                })
+               
+            }>
                     Guardar
                 </Button>
           </Form>

@@ -14,7 +14,7 @@ class Tarea extends Component{
                     Autor:{this.props.tarea.autor}<br/>
                     Fecha de entrega:{this.props.tarea.fechaEntrega}<br/>
                     Entregado: {this.props.tarea.entregado ? <Image src={check}  />:<Image src={cross}  />}<br/>
-                    <Button bsStyle="warning">
+                    <Button bsStyle="success">
                        Modificar
                     </Button>
                     <Button bsStyle="danger">

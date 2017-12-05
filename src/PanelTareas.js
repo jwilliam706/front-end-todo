@@ -2,12 +2,15 @@ import React,{Component} from 'react';
 import {Grid,Row} from 'react-bootstrap';
 import Tarea from './Tarea';
 import NuevaTarea from './NuevaTarea';
+import ModalAgregarT from './modalAgregarT';
 import {connect} from 'react-redux';
 import {cargarTareas} from './actionCreators';
+import Alerta from './Alerta';
+
 
 class PanelTareas extends Component{
+    
     render(){
-        console.log(this.props)
         return(
             <Grid>
                 <Row>
@@ -17,6 +20,7 @@ class PanelTareas extends Component{
                         })
                     }
                     <NuevaTarea/>
+                    <ModalAgregarT/>
                 </Row>
             </Grid>
         )

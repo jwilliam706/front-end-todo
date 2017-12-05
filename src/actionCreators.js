@@ -16,4 +16,21 @@ const cargarTareas = () => {
     }
 }
 
-export {cargarTareas}
+const agregarTarea = (tarea) =>{
+    return dispatch => {
+        return axios.post("http://api-rest-padawan.herokuapp.com/tareas",{
+            titulo:tarea.titulo,
+            descripcion: tarea.descripcion,
+            autor: tarea.autor,
+            //fechaEntrega: tarea.fechaEntrega
+        }).then(
+            response =>{
+                dispatch(cargarTareas())
+            }
+        )
+    }
+}
+
+
+
+export {cargarTareas,agregarTarea}

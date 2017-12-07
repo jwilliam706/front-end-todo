@@ -6,7 +6,6 @@ import './Tarea.css';
 import {borrarTarea,finalizarTarea} from './actionCreators';
 import {connect} from 'react-redux';
 import Modificar from './modificarTarea';
-import {NotificationManager} from 'react-notifications';
 
 
 class Tarea extends Component{
@@ -14,6 +13,8 @@ class Tarea extends Component{
         super(props);
         this.state = { mostrar:false };
       }
+
+      
     render(){
         let cerrar = () => this.setState({ mostrar: false });
         return(
@@ -21,15 +22,17 @@ class Tarea extends Component{
                  <Panel header={this.props.tarea.titulo} bsStyle="primary">
                     ID: {this.props.tarea._id}<br/>
                     Descripcion:{this.props.tarea.descripcion}<br/>
-                    Autor:{this.props.tarea.autor}<br/>
+                    Autor:{this.props.tarea.autor.nombre}<br/>
                     Fecha de entrega:{this.props.tarea.fechaEntrega}<br/>
                     Entregado: {this.props.tarea.entregado ? <Image src={check}  />:<Image src={cross}  />}<br/>
                     <Button bsStyle="success" onClick={() => this.setState({ mostrar: true })}>
                        Modificar
                     </Button>
-                    <Button bsStyle="warning" onClick={()=>this.props.finalizarTarea(this.props.tarea._id)}>
-                       Finalizar
-                    </Button>
+                    {!this.props.tarea.entregado&&
+                        <Button bsStyle="warning" onClick={()=>this.props.finalizarTarea(this.props.tarea._id)}>
+                            Finalizar
+                        </Button>
+                    }
                     <Button bsStyle="danger" onClick={()=>this.props.borrarTarea(this.props.tarea._id)}>
                         Eliminar
                     </Button>

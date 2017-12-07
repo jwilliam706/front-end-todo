@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 class Formulario extends Component{
     
     validate = () => {
-        if(this.username.value==""||this.password.value=="")
+        if(this.username.value===""||this.password.value==="")
         {
             return false;
         }

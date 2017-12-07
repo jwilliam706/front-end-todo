@@ -22,11 +22,18 @@ const agregarTarea = (tarea) =>{
         return axios.post("http://api-rest-padawan.herokuapp.com/tareas",{
             titulo:tarea.titulo,
             descripcion: tarea.descripcion,
-            autor: tarea.autor,
             fechaEntrega: tarea.fechaEntrega
         }).then(
             response =>{
                 dispatch(cargarTareas())
+                if(response.data.error)
+                {
+                    NotificationManager.error(response.data.error, 'Error');
+                }
+                else
+                {
+                    NotificationManager.success(response.data.mensaje, 'Guardado');
+                }
             }
         )
     }
@@ -41,8 +48,16 @@ const modificarTarea = (tarea) =>{
             fechaEntrega: tarea.fechaEntrega
         }).then(
             response =>{
-                dispatch(cargarTareas()),
-                NotificationManager.success('Success message', response.data.mensaje);
+                dispatch(cargarTareas());
+
+                if(response.data.error)
+                {
+                    NotificationManager.error(response.data.error, 'Error');
+                }
+                else
+                {
+                    NotificationManager.success('Se guardaron los cambios', 'Tarea modificada');
+                }
             }
         )
     }
@@ -52,7 +67,15 @@ const borrarTarea = (id) =>{
     return dispatch => {
         return axios.delete("http://api-rest-padawan.herokuapp.com/tareas/"+id).then(
             response =>{
-                dispatch(cargarTareas())
+                dispatch(cargarTareas());
+                if(response.data.error)
+                {
+                    NotificationManager.error(response.data.error, 'Error');
+                }
+                else
+                {
+                    NotificationManager.error(response.data.mensaje, 'Eliminada');
+                }
             }
         )
     }
@@ -62,7 +85,15 @@ const finalizarTarea = (id) =>{
     return dispatch => {
         return axios.put("http://api-rest-padawan.herokuapp.com/tareas/finalizar/"+id).then(
             response =>{
-                dispatch(cargarTareas())
+                dispatch(cargarTareas());
+                if(response.data.error)
+                {
+                    NotificationManager.error(response.data.error, 'Error');
+                }
+                else
+                {
+                    NotificationManager.success('Se marco como completada', 'Tarea finalizada');
+                }
             }
         )
     }
@@ -76,9 +107,9 @@ const logIn = (usuario) =>{
             email:usuario.username,
             pass:usuario.password
         }).then(response =>{
-            if(response.data.mensaje)
+            if(response.data.error)
             {
-                NotificationManager.error(response.data.mensaje,"Error");
+                NotificationManager.error(response.data.error,'Error');
             }
             else
             {

@@ -6,10 +6,6 @@ import '../node_modules/react-notifications/dist/react-notifications.css';
 import Moment from 'moment';
 
 class FrmModTarea extends Component{
-    constructor(props){
-        super(props);
-        
-    }
     
     render(){
         return(

@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import {Modal,Button} from 'react-bootstrap';
-import Alerta from './Alerta';
 import FrmModTarea from './FrmModTarea';
 
 

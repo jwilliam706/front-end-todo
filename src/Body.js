@@ -3,7 +3,7 @@ import Formulario from './Formulario';
 import Home from './Home';
 import PanelTareas from './PanelTareas';
 import Tarea from './Tarea';
-import {Switch,Router, Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import autenticar from './Autenticar';
 
 

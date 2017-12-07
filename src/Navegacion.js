@@ -20,8 +20,6 @@ class Navegacion extends Component {
 }
 
   render(){
-      console.log(this.props.logged);
-
       const linksUser = (
         <div>
           <Nav>

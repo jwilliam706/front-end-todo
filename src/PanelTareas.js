@@ -5,8 +5,7 @@ import NuevaTarea from './NuevaTarea';
 import ModalAgregarT from './modalAgregarT';
 import {connect} from 'react-redux';
 import {cargarTareas} from './actionCreators';
-import Alerta from './Alerta';
-
+    
 
 class PanelTareas extends Component{
     

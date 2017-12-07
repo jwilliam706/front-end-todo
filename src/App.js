@@ -3,6 +3,7 @@ import logo from './logo.png';
 import './App.css';
 import Navegacion from './Navegacion';
 import Body from './Body';
+import {NotificationContainer} from 'react-notifications';
 
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
         </header>
         <Navegacion></Navegacion>
       <Body/>
+      <NotificationContainer/>
       </div>
     );
   }

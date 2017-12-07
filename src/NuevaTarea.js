@@ -12,7 +12,7 @@ class NuevaTarea extends Component{
     render(){
         let cerrar = () => this.setState({ mostrar: false });
         return(
-            <Col xs={3} md={3}>
+            <Col xs={12} md={6} lg={3}>
                  <Panel header="Nueva tarea" bsStyle="primary">
                   <Image src={plus} responsive onClick={() => this.setState({ mostrar: true })}  style={{ display: 'block', margin: 'auto' }}/>
                 </Panel>

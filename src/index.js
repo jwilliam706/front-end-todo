@@ -9,10 +9,24 @@ import store from './store';
 import setAuthorizationToken from './setAuthorizationToken';
 import {setUsuarioActual} from './actionCreators';
 import jwt from 'jsonwebtoken';
+import axios from 'axios';
 
 if(localStorage.token){
-    setAuthorizationToken(localStorage.token);
-    store.dispatch(setUsuarioActual(jwt.decode(localStorage.token)));
+    axios.post("http://api-rest-padawan.herokuapp.com/verificarToken",{token:localStorage.token}).then(
+        response=>{
+            if(response.data.valido)
+            {
+                setAuthorizationToken(localStorage.token);
+                store.dispatch(setUsuarioActual(jwt.decode(localStorage.token)));
+            }
+            else
+            {
+                localStorage.removeItem('token');
+            }
+        }
+    )
+
+    
 }
 
 ReactDOM.render(

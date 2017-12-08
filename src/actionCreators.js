@@ -141,4 +141,35 @@ const logout = () =>{
     }
 }
 
-export {cargarTareas,agregarTarea,modificarTarea,borrarTarea,finalizarTarea,logIn,setUsuarioActual,logout}
+const registrarse = (usuario) =>{
+    return dispatch =>{
+        return axios.post("http://api-rest-padawan.herokuapp.com/registrar",{
+            nombre:usuario.nombre,
+            email:usuario.username,
+            pass: usuario.password
+        }).then(
+            response =>{
+                if(response.data.error)
+                {
+                    NotificationManager.error('Error al registrarse','Error');
+                }
+                else
+                {
+                    dispatch(logIn(usuario));
+                    NotificationManager.success('Usuario registrado','Registro completo');
+                }
+            }
+        )
+    }
+}
+
+export {cargarTareas,
+        agregarTarea,
+        modificarTarea,
+        borrarTarea,
+        finalizarTarea,
+        logIn,
+        setUsuarioActual,
+        logout,
+        registrarse
+       }

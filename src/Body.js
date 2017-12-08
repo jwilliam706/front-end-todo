@@ -5,7 +5,7 @@ import PanelTareas from './PanelTareas';
 import Tarea from './Tarea';
 import {Switch, Route} from 'react-router-dom';
 import autenticar from './Autenticar';
-
+import Registro from './Registro';
 
 class Body extends Component{
     render(){
@@ -14,7 +14,7 @@ class Body extends Component{
             <Switch>
                 <Route  exact path="/" component={Home}/>
                 <Route  path="/login" component={Formulario}/>
-                <Route  path="/registrar" component={Home}/>
+                <Route  path="/registrar" component={Registro}/>
                 <Route  path="/tareas" component={autenticar(PanelTareas)}/>
                 <Route  path="/tareas/:id" component={Tarea}/>
                 <Route  component={Formulario}/>

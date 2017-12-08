@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {logout} from './actionCreators';
 
-
 class Navegacion extends Component {
     
   logout(e){
@@ -31,8 +30,6 @@ class Navegacion extends Component {
             <NavItem>Tareas</NavItem>
           </LinkContainer>
 
-        </Nav>
-         <Nav pullRight>
          <LinkContainer to="/logout" onClick={this.logout.bind(this)}>
          <NavItem>Cerrar Sesion</NavItem>
          </LinkContainer>

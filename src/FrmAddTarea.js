@@ -26,13 +26,14 @@ class FrmAddTarea extends Component{
                 <ControlLabel>Descripcion:</ControlLabel>
                 <FormControl inputRef={input => this.descripcion = input} componentClass="textarea" placeholder="textarea" />
             </FormGroup>
-                <Button type="button" bsStyle="success" onClick={()=> this.props.agregarTarea({
-                    titulo:this.titulo.value,
-                    descripcion:this.descripcion.value,
-                    fechaEntrega:this.fechaEntrega.value
-                })
-               
-            }>
+                <Button type="button" bsStyle="success" onClick={()=> {
+                    this.props.agregarTarea({
+                        titulo:this.titulo.value,
+                        descripcion:this.descripcion.value,
+                        fechaEntrega:this.fechaEntrega.value
+                    });
+                    this.props.cerrar();
+            }}>
                     Guardar
                 </Button>
           </Form>

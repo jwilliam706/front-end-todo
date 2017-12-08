@@ -12,6 +12,7 @@ class Tarea extends Component{
     constructor(props) {
         super(props);
         this.state = { mostrar:false };
+
       }
 
       
@@ -20,7 +21,6 @@ class Tarea extends Component{
         return(
             <Col xs={12} md={6} lg={3}>
                  <Panel header={this.props.tarea.titulo} bsStyle="primary">
-                    ID: {this.props.tarea._id}<br/>
                     Descripcion:{this.props.tarea.descripcion}<br/>
                     Autor:{this.props.tarea.autor.nombre}<br/>
                     Fecha de entrega:{this.props.tarea.fechaEntrega}<br/>

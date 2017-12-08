@@ -11,7 +11,7 @@ class ModalAgregarT extends Component{
               <Modal.Title id="contained-modal-title-lg">Agregar Tarea</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <FrmAddTarea/>
+                <FrmAddTarea cerrar={this.props.onHide}/>
             </Modal.Body>
             <Modal.Footer>
               <Button bsStyle="primary" onClick={this.props.onHide}>Close</Button>

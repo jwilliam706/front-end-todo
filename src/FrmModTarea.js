@@ -32,15 +32,14 @@ class FrmModTarea extends Component{
                 <ControlLabel>Descripcion:</ControlLabel>
                 <FormControl inputRef={input => this.descripcion = input} componentClass="textarea" placeholder="textarea" defaultValue={this.props.tarea.descripcion}/>
             </FormGroup>
-                <Button type="button" bsStyle="success" onClick={()=> this.props.modificarTarea({
+                <Button type="button" bsStyle="success" onClick={()=> {this.props.modificarTarea({
                     id:this.id.value,
                     titulo:this.titulo.value,
                     descripcion:this.descripcion.value,
                     autor:this.autor.value,
                     fechaEntrega:this.fechaEntrega.value
-                })
-               
-            }>
+                });
+                this.props.cerrar()}}>
                     Guardar
                 </Button>
           </Form>

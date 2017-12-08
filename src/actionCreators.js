@@ -32,7 +32,7 @@ const agregarTarea = (tarea) =>{
                 }
                 else
                 {
-                    NotificationManager.success(response.data.mensaje, 'Guardado');
+                    NotificationManager.success('Se guardo la tarea', 'Tarea guardada');
                 }
             }
         )

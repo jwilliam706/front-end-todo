@@ -70,14 +70,11 @@ class Formulario extends Component{
         
                     <FormGroup>
                     <Col smOffset={2} sm={10}>
-                        <Checkbox>Recordarme</Checkbox>
-                    </Col>
-                    </FormGroup>
-        
-                    <FormGroup>
-                    <Col smOffset={2} sm={10}>
                         <Button type="submit" bsStyle="primary">
                         Iniciar Sesion
+                        </Button>
+                        <Button type="button" bsStyle="success" href="/registrar">
+                        Registrarse
                         </Button>
                     </Col>
                     </FormGroup>

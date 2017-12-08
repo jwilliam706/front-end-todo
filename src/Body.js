@@ -14,6 +14,7 @@ class Body extends Component{
             <Switch>
                 <Route  exact path="/" component={Home}/>
                 <Route  path="/login" component={Formulario}/>
+                <Route  path="/registrar" component={Home}/>
                 <Route  path="/tareas" component={autenticar(PanelTareas)}/>
                 <Route  path="/tareas/:id" component={Tarea}/>
                 <Route  component={Formulario}/>

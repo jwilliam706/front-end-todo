@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "jsonwebtoken": "^8.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.19.3",
     "moment-timezone": "^0.5.14",
     "prop-types": "^15.6.0",
